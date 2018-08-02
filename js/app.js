@@ -7,6 +7,11 @@ function myMap() {
 
 $(document).ready(function() {
 
+setTimeout(function() {
+  $('#splashscreen').delay(2000);
+  $('#main').show();
+}, 3000);
+
 for (var v of restaurantes) {
   var newI = $("<img>");
   newI.addClass("img");

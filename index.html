@@ -11,26 +11,35 @@
     <title>Foodmap</title>
   </head>
   <body>
-
-
-    <h1 class="col-12 text-center pt-5">Foodmap</h1>
-    <hr class="line">
-    <div class="container">
-      <div id="googleMap" class="col-12 align-center" style="width:80vw;height:60vh;"></div>
-    </div>
-    <div class="container pt-0">
-      <h4 class="col-12 text-center pb-2">Comida cerca de ti</h4>
-      <div class="input-group mb-3 col-12">
-        <input type="text" class="form-control" placeholder="filtrar restaurantes" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-light" type="button" id="button-addon2">Filtrar</button>
+    <section id="splashscreen">
+      <div class="container-fluid pt-5 mt-5">
+        <div class="row">
+          <div class="col-12 pt-5 mt-5">
+            <span class="align-middle">Foodmap</span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="container pt-0">
-      <div class="images"></div>
-    </div>
+    <section id=main>
+      <h1 class="col-12 text-center pt-5">Foodmap</h1>
+      <hr class="line">
+      <div class="container">
+        <div id="googleMap" class="col-12 align-center" style="width:80vw;height:60vh;"></div>
+      </div>
+      <div class="container pt-0">
+        <h4 class="col-12 text-center pb-2">Comida cerca de ti</h4>
+        <div class="input-group mb-3 col-12">
+          <input type="text" class="form-control" placeholder="filtrar restaurantes" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-light" type="button" id="button-addon2">Filtrar</button>
+          </div>
+        </div>
+      </div>
+      <div class="container pt-0">
+        <div class="images"></div>
+      </div>
+    </section>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
