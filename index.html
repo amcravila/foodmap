@@ -5,21 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+    <link href="https://file.myfontastic.com/jpVW59LhkJpEqujBD4J3bH/icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <title>Home</title>
+    <title>Foodmap</title>
   </head>
   <body>
 
 
+    <h1 class="col-12 text-center pt-5">Foodmap</h1>
+    <hr class="line">
+    <div class="container">
+      <div id="googleMap" class="col-12 align-center" style="width:80vw;height:60vh;"></div>
+    </div>
+    <div class="container pt-0">
+      <h4 class="col-12 text-center pb-2">Comida cerca de ti</h4>
+      <div class="input-group mb-3 col-12">
+        <input type="text" class="form-control" placeholder="filtrar restaurantes" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-light" type="button" id="button-addon2">Filtrar</button>
+        </div>
+      </div>
+    </div>
 
-    <!-- O script comentado é o do Google maps -->
-    <!-- <script async defer  src="https://maps.googleapis.com/maps/api/js?key=<sua-chave-da-API>&callback=<sua-funcao-de-inicio>">
-    </script> -->  
+    <div class="container pt-0">
+      <div class="images"></div>
+    </div>
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"crossorigin="anonymous"></script>
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
+    <script async defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDylvx3BRhd2WrzbNk60LEmRezGSeM7VTQ&callback=myMap">
+    </script>
   </body>
 </html>
