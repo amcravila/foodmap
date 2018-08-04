@@ -52,8 +52,9 @@ h1 {
 }
 
 .img {
-  width: 22vw;
-  height: 22vw;
+  width: 26vw;
+  height: 26vw;
+  padding: 10px;
 }
 
 #main {

@@ -28,21 +28,22 @@
         <div id="googleMap" class="col-12 align-center" style="width:80vw;height:60vh;"></div>
       </div>
       <div class="container pt-0">
-        <h4 class="col-12 text-center pb-2">Comida cerca de ti</h4>
+        <h4 class="col-12 text-center pb-2">Comida perto de você</h4>
         <div class="input-group mb-3 col-12">
-          <input type="text" class="form-control" placeholder="filtrar restaurantes" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <input type="text" class="form-control pb-0 mb-0" id="restaurant-type" placeholder="filtrar restaurantes" aria-label="Recipient's username" aria-describedby="button-addon2">
           <div class="input-group-append">
-            <button class="btn btn-outline-light" type="button" id="button-addon2">Filtrar</button>
+            <button class="btn icon-search" type="button" id="filter"></button>
           </div>
         </div>
       </div>
       <div class="container pt-0">
         <div class="images"></div>
+        <div class="imagesFilter"></div>
       </div>
     </section>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"crossorigin="anonymous"></script>
     <script src="js/data.js"></script>
