@@ -83,7 +83,7 @@ var center = new google.maps.LatLng(-23.5576413, -46.6623001);
 function initialize() {
 
   var mapOptions = {
-    zoom: 20,
+    zoom: 16,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     center: center
   };
@@ -98,13 +98,14 @@ function initialize() {
       google.maps.event.trigger(map, 'resize');
       map.setCenter(center);
     });
+    infoWindow = new google.maps.InfoWindow;
     $.each(restaurantes, function(index, value) {
       var lat = restaurantes[index].latitude;
       var lng = restaurantes[index].longitude
       var markerRest = new google.maps.Marker({position: new google.maps.LatLng(lat, lng), map: map});
     });
   });
-  };
+};
 
   initialize();
 
