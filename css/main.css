@@ -107,14 +107,14 @@ h1 {
 body, .modal-open .page-container, .modal-open .page-container .navbar-fixed-top, .modal-open .modal-container {
   overflow-y: scroll;
 }
-@media (max-width: 979px) {
+@media (max-width: 576px) {
   .modal-open .page-container .navbar-fixed-top {
     overflow-y: visible;
   }
 }
 #map-canvas {
   height: 50vh;
-  width: 60vh;
+  width: 60vw;
   margin-bottom: 10px;
 }
 #modalTitle {
