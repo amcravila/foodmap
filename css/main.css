@@ -114,7 +114,7 @@ body, .modal-open .page-container, .modal-open .page-container .navbar-fixed-top
 }
 #map-canvas {
   height: 50vh;
-  width: 80vw;
+  width: 70vw;
   margin-bottom: 10px;
 }
 #modalTitle {
