@@ -68,7 +68,7 @@ $(document).ready(function() {
     });
   });
 
-  $('.imagesFilter').click(function () {
+  $('.imagesFilter').mouseover(function () {
     $('img').click(function () {
       var index = $(this).attr("id");
       $('#modalTitle').html(names[index]);
@@ -104,7 +104,7 @@ $('.launch-map').click(function () {
     var markerRest = new google.maps.Marker({position: latLng, map: map});
     return false;
   });
-  
+
 });
 };
 
