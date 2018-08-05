@@ -51,7 +51,7 @@ h1 {
   border: 2px solid #fff;
 }
 
-.img {
+.image {
   width: 26vw;
   height: 26vw;
   padding: 10px;
@@ -100,4 +100,31 @@ h1 {
 
 .search-query:focus{
     z-index: 0;
+}
+
+
+/* MODAL MAP */
+body, .modal-open .page-container, .modal-open .page-container .navbar-fixed-top, .modal-open .modal-container {
+  overflow-y: scroll;
+}
+@media (max-width: 979px) {
+  .modal-open .page-container .navbar-fixed-top {
+    overflow-y: visible;
+  }
+}
+#map-canvas {
+  height: 50vh;
+  width: 70vh;
+  margin-bottom: 10px;
+}
+#modalTitle {
+  font-weight: bold;
+}
+#typeModal {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#descriptionModal {
+  font-weight: bold;
 }
