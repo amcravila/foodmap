@@ -20,15 +20,13 @@ $(document).ready(function() {
 
 //FOTOS RESTAURANTES
   var names = [];
-  // var images = [];
   var descriptions = [];
   var types = [];
   $.each(restaurantes, function(index, value) {
     names.push(value.name);
-    // images.push(value.image);
     types.push(value.type.toUpperCase());
     descriptions.push(value.description);
-    $(".images").append("<img src= " + value.image + " alt=''" + " class='image'" + " data-toggle='modal' data-target='#modalRest'>");
+    $(".images").append("<img src= " + "'" + value.image + "'" + " alt=''" + " id=" + "'" + index + "'" + " class='image'" + " data-toggle='modal' data-target='#modalMap'>");
   });
 
 //FILTRO RESTAURANTES
@@ -38,7 +36,8 @@ $(document).ready(function() {
     $.each(restaurantes, function(index, value) {
       if (inputValue === value.type) {
         $('.images').fadeOut();
-        $('.imagesFilter').append("<img src= " + "'" + value.image + "'" + " class='image'" + '>');
+        $('.imagesFilter').fadeIn();
+        $('.imagesFilter').append("<img src= " + "'" + value.image + "'" + " id=" + "'" + index + "'" + " class='image'" + " data-toggle='modal' data-target='#modalMap'>");
         $('#filter').prop('disabled', true);
       }
     });
@@ -47,25 +46,37 @@ $(document).ready(function() {
   $('#restaurant-text').on('input', function () {
     if($(this).val() === '') {
       for (var v of restaurantes) {
-        $('.imagesFilter').remove();
+        $('.imagesFilter').fadeOut();
         $('.images').fadeIn('slow');
         $('#filter').prop('disabled', false);
+        $('.imagesFilter').empty();
       };
     }
   })
 
 //MODAL
-  $(".launch-map").click(function () {
-    var index = $(this).index();
-      $("#modalTitle").append(names[index]);
-      $("#typeModal").append("Tipo: " + types[index]);
-      $('#descriptionModal').append("Descrição: " + descriptions[index]);
+  $('img').click(function () {
+      var index = $(this).attr("id");
+      $('#modalTitle').html(names[index]);
+      $('#typeModal').html("Tipo: " + types[index]);
+      $('#descriptionModal').html("Descrição: " + descriptions[index]);
+
+    $('.close').click(function () {
+      $('#modalTitle').html('');
+      $('#typeModal').html('');
+      $('#descriptionModal').html('');
+    });
   });
-  $('.close').click(function () {
-    $('#modalTitle').html("");
-    $('#typeModal').html("");
-    $('#descriptionModal').html("");
+
+  $('.imagesFilter').click(function () {
+    $('img').click(function () {
+      var index = $(this).attr("id");
+      $('#modalTitle').html(names[index]);
+      $('#typeModal').html("Tipo: " + types[index]);
+      $('#descriptionModal').html("Descrição: " + descriptions[index]);
+    });
   });
+
 
 //MODAL Map
 var center = new google.maps.LatLng(-23.5576413, -46.6623001);
@@ -80,7 +91,7 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-$('.launch-map').click(function (e) {
+$('.launch-map').click(function () {
   $('#modalMap').modal({
     backdrop: 'static',
     keyboard: false
@@ -93,12 +104,10 @@ $('.launch-map').click(function (e) {
     var markerRest = new google.maps.Marker({position: latLng, map: map});
     return false;
   });
+  
 });
-
 };
 
 initialize();
-
-
 
 });
