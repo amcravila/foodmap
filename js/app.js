@@ -80,34 +80,32 @@ $(document).ready(function() {
 
 //MODAL Map
 var center = new google.maps.LatLng(-23.5576413, -46.6623001);
-var infowindow = new google.maps.InfoWindow();
 function initialize() {
 
   var mapOptions = {
-    zoom: 15,
+    zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     center: center
   };
 
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-$('.launch-map').click(function () {
-  $('#modalMap').modal({
-    backdrop: 'static',
-    keyboard: false
-  }).on('shown.bs.modal', function () {
-    google.maps.event.trigger(map, 'resize');
-    map.setCenter(center);
+  $('.launch-map').click(function () {
+    $('#modalMap').modal({
+      backdrop: 'static',
+      keyboard: false
+    }).on('shown.bs.modal', function () {
+      google.maps.event.trigger(map, 'resize');
+      map.setCenter(center);
+    });
+    $.each(restaurantes, function(index, value) {
+      var lat = restaurantes[index].latitude;
+      var lng = restaurantes[index].longitude
+      var markerRest = new google.maps.Marker({position: new google.maps.LatLng(lat, lng), map: map});
+    });
   });
-  $.each(restaurantes, function(index, value) {
-    var latLng = new google.maps.LatLng(value.latitude, value.longitude);
-    var markerRest = new google.maps.Marker({position: latLng, map: map});
-    return false;
-  });
+  };
 
-});
-};
-
-initialize();
+  initialize();
 
 });
